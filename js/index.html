@@ -23,29 +23,29 @@
 
     // console.log(replace(noun));
 
-    // function getObject(xCor, yCor) {
-    //     // this.x = xCor;
-    //     // this.y = yCor;
-    //     return ({
-    //         x: xCor,
-    //         y: yCor,
-    //         guessFun(xGuess, yGuess) {
-    //             if (this.x == xGuess && this.y == yGuess) {
-    //                 console.log("actual value ", this.x, this.y, " your guess ", xGuess, yGuess);
-    //                 console.log("You have guessed it right");
-    //             } else {
-    //                 console.log("actual value ", this.x, this.y, " your guess ", xGuess, yGuess);
-    //                 console.log("sorry your guess is not correct");
-    //             }
-    //         }
-    //     }
-    //     );
-    // }
+    function getObject(xCor, yCor) {
+        // this.x = xCor;
+        // this.y = yCor;
+        return ({
+            x: xCor,
+            y: yCor,
+            guessFun(xGuess, yGuess) {
+                if (this.x == xGuess && this.y == yGuess) {
+                    console.log("actual value ", this.x, this.y, " your guess ", xGuess, yGuess);
+                    console.log("You have guessed it right");
+                } else {
+                    console.log("actual value ", this.x, this.y, " your guess ", xGuess, yGuess);
+                    console.log("sorry your guess is not correct");
+                }
+            }
+        }
+        );
+    }
 
-    // var s1 = new getObject(2, 3);
-    // var s2 = new getObject(10, 20);
-    // s1.guessFun(2, 3);
-    // s2.guessFun(10, 20);
+    var s1 = new getObject(2, 3);
+    var s2 = new getObject(10, 20);
+    s1.guessFun(2, 3);
+    s2.guessFun(10, 20);
 
 </script>
 <body>
