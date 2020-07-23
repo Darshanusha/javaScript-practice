@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Testing</title>
+    </head>
+    <body>
+        <h1>Json Example</h1>
+        <div class="output">
+            <ul id="out">
+
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var data = '{"cut grass": true,"buy medicines": false}'
+    parseJSON = JSON.parse(data)
+        console.log(parseJSON);
+        for(var key in parseJSON){
+            console.log(key,parseJSON[key]);
+            var checked = !parseJSON[key]? "" : "checked";
+            html = '<li>'+key+'<input type = "checkbox" value ="'+key+'" '+checked+'></li>'
+            document.querySelector('#out').innerHTML += html;
+        }
+        addEvents();
+
+        function addEvents(){
+            var checkBoxes = document.querySelectorAll('#out input[type = "checkbox"]');
+            console.log("cb");
+            console.log(checkBoxes);
+            for(var index in checkBoxes){
+                console.log("aa",checkBoxes);
+                checkBoxes[index].onchange = updateJson;
+            }
+
+            function updateJson(){
+                var key = event.target.value;
+                console.log(key,event.target.checked);
+                parseJSON[key] = event.target.checked;
+            }
+        }
+        
+    </script>
+</html>
